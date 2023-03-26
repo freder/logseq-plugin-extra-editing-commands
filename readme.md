@@ -23,3 +23,12 @@ TODO: update gif
 - Default shortcut: `mod-enter`
 
 TODO: gif
+
+---
+
+## Duplicate block
+
+- Duplicate the current block below the current one
+- Default shortcut: `shift+mod+d`
+
+TODO: gif

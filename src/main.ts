@@ -4,6 +4,8 @@ import '@logseq/libs';
 
 const settingsKeyInsertAbove = 'insertNewBlockAbove';
 const settingsKeyInsertBelow = 'insertNewBlockBelow';
+const settingsKeyDuplicate = 'duplicateBlock';
+
 
 const settingsSchema: SettingSchemaDesc[] = [
 	{
@@ -18,6 +20,13 @@ const settingsSchema: SettingSchemaDesc[] = [
 		title: 'Insert a new block below',
 		description: 'Insert a new block below the current one',
 		default: 'mod+enter',
+		type: 'string',
+	},
+	{
+		key: settingsKeyDuplicate,
+		title: 'Duplicate the current block',
+		description: 'Duplicate the current block below the current one',
+		default: 'shift+mod+d',
 		type: 'string',
 	},
 ];
@@ -59,6 +68,28 @@ const main = async () => {
 			logseq.Editor.insertBlock(current.uuid, '', {
 				before: false, sibling: true, focus: true,
 			});
+		}
+	);
+
+	logseq.App.registerCommandShortcut(
+		{
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+			binding: logseq.settings![settingsKeyDuplicate],
+		},
+		async () => {
+			const current = await logseq.Editor.getCurrentBlock();
+			if (!current) {
+				return;
+			}
+			const newBlock = await logseq.Editor.insertBlock(current.uuid, '', {
+				before: false,
+				sibling: true,
+				focus: true,
+			});
+			if (!newBlock) {
+				return console.error('failed to duplicate block');
+			}
+			logseq.Editor.updateBlock(newBlock.uuid, current.content);
 		}
 	);
 };
