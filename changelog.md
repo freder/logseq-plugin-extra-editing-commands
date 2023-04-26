@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.x.x
+## 1.1.0
 ### Added
 - Changelog / release notes
 - New command: "Duplicate block"
