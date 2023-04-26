@@ -72,19 +72,12 @@ const main = async () => {
 	);
 
 	logseq.App.registerCommandShortcut(
-		{
-			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-			binding: logseq.settings![settingsKeyDuplicate],
-		},
+		{ binding: settings[settingsKeyDuplicate] },
 		async () => {
 			const current = await logseq.Editor.getCurrentBlock();
-			if (!current) {
-				return;
-			}
+			if (!current) { return; }
 			const newBlock = await logseq.Editor.insertBlock(current.uuid, '', {
-				before: false,
-				sibling: true,
-				focus: true,
+				before: false, sibling: true, focus: true,
 			});
 			if (!newBlock) {
 				return console.error('failed to duplicate block');
