@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2
+### Fixed
+- Fixed release notes
+
 ## 1.1.1
 ### Fixed
 - Fixed build action
