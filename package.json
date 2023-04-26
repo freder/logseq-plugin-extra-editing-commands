@@ -4,6 +4,8 @@
   "main": "dist/index.html",
   "logseq": {
     "id": "logseq-plugin-extra-editing-commands",
+	"title": "Extra editing commands",
+	"icon": "marketplace/icon.png"
   },
   "scripts": {
     "lint": "eslint ./src",
