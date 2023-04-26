@@ -3,7 +3,7 @@
 name: Releases
 
 env:
-  PLUGIN_NAME: logseq-plugin-insert-above
+  PLUGIN_NAME: logseq-plugin-extra-editing-commands
 
 # Controls when the action will run.
 on:
