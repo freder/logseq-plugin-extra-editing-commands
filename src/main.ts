@@ -6,12 +6,13 @@ import type {
 import '@logseq/libs';
 
 
-const settingsKey = 'insertNewBlockAbove';
-const settingsLabel = 'Insert new block above';
+const settingsKeyInsertAbove = 'insertNewBlockAbove';
+const settingsLabelInsertAbove = 'Insert new block above';
+
 const settings: SettingSchemaDesc[] = [
 	{
-		key: settingsKey,
-		title: settingsLabel,
+		key: settingsKeyInsertAbove,
+		title: settingsLabelInsertAbove,
 		description: 'Insert a new block above the current one',
 		default: 'shift+mod+enter',
 		type: 'string',
@@ -27,23 +28,24 @@ const main = async () => {
 
 	logseq.useSettingsSchema(settings);
 
-	const keyBinding: SimpleCommandKeybinding = {
-		// mode: 'editing', // 'global' | 'non-editing'
-		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-		binding: logseq.settings![settingsKey],
-	};
-
-	logseq.App.registerCommandShortcut(keyBinding, async () => {
-		const current = await logseq.Editor.getCurrentBlock();
-		if (!current) {
-			return;
+	logseq.App.registerCommandShortcut(
+		{
+			// mode: 'editing', // 'global' | 'non-editing'
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+			binding: logseq.settings![settingsKeyInsertAbove],
+		},
+		async () => {
+			const current = await logseq.Editor.getCurrentBlock();
+			if (!current) {
+				return;
+			}
+			logseq.Editor.insertBlock(current.uuid, '', {
+				before: true,
+				sibling: true,
+				focus: true,
+			});
 		}
-		logseq.Editor.insertBlock(current.uuid, '', {
-			before: true,
-			sibling: true,
-			focus: true,
-		});
-	});
+	);
 };
 
 
