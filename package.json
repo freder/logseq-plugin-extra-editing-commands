@@ -1,6 +1,6 @@
 {
   "name": "logseq-plugin-insert-above",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.html",
   "logseq": {
     "id": "logseq-plugin-insert-above"
