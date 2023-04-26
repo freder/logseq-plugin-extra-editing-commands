@@ -32,3 +32,10 @@ TODO: gif
 - Default shortcut: `shift+mod+d`
 
 TODO: gif
+
+--
+
+# ideas / todo
+- [ ] duplicate current block including children
+- [ ] jump along indent
+- [ ] jump to next heading of same level
