@@ -1,7 +1,7 @@
 {
-	"title": "Insert above",
-	"description": "Shortcut to insert a new block above the current one",
+	"title": "Extra editing commands",
+	"description": "Logseq plugin that provides additional editing functionality",
 	"author": "freder",
-	"repo": "freder/logseq-plugin-insert-above",
+	"repo": "freder/logseq-plugin-extra-editing-commands",
 	"icon": "icon.png"
 }

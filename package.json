@@ -1,9 +1,11 @@
 {
-  "name": "logseq-plugin-insert-above",
-  "version": "1.0.1",
+  "name": "logseq-plugin-extra-editing-commands",
+  "version": "1.1.0",
   "main": "dist/index.html",
   "logseq": {
-    "id": "logseq-plugin-insert-above"
+    "id": "logseq-plugin-extra-editing-commands",
+	"title": "Extra editing commands",
+	"icon": "marketplace/icon.png"
   },
   "scripts": {
     "lint": "eslint ./src",
