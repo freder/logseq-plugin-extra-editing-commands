@@ -12,21 +12,21 @@ const settingsSchema: SettingSchemaDesc[] = [
 		key: settingsKeyInsertAbove,
 		title: 'Insert new block above',
 		description: 'Insert a new block above the current one',
-		default: 'shift+mod+enter',
+		default: '', // shift+mod+enter
 		type: 'string',
 	},
 	{
 		key: settingsKeyInsertBelow,
 		title: 'Insert a new block below',
 		description: 'Insert a new block below the current one',
-		default: 'mod+enter',
+		default: '', // mod+enter
 		type: 'string',
 	},
 	{
 		key: settingsKeyDuplicate,
 		title: 'Duplicate the current block',
 		description: 'Duplicate the current block below the current one',
-		default: 'shift+mod+d',
+		default: '', // shift+mod+d
 		type: 'string',
 	},
 ];
