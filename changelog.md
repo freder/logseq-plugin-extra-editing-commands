@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.x.x
+## 1.1.3
 ### Changed
 - Removed default key bindings
 ### Fixed
