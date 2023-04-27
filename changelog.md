@@ -3,6 +3,8 @@
 ## 1.x.x
 ### Changed
 - Removed default key bindings
+### Fixed
+- Not setting a key binding resulted in an error (#2)
 
 ## 1.1.2
 ### Fixed
